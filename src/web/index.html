@@ -14,16 +14,23 @@
 </form>
 <p>
   Reply: <span id="reply"></span>
+  <div id="error_message" class="error"></div>
 </p>
 </body>
 <script type="text/javascript">
-function update() {
-  var name = $('#name_age_form [name=name]').val();
-  var age = $('#name_age_form [name=age]').val();
-  Greeting.sayHello(name, age, { callback: function(data) {
-      $('#reply').text(data);
-  }})
-  
+function update(){
+  var form = $('#name_age_form').serializeJson();
+  Greeting.sayHello( form, {
+    callback: function( data){
+      $( '#reply').text( data);
+    },
+    errorHandler: updateErrorMessage
+  });
 }
+function updateErrorMessage(message, exception){
+  $('#error_message').text(message);
+}
+</script>
+
 </script>
 </html>

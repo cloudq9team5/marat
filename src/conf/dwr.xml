@@ -9,5 +9,6 @@
     <create creator="new" javascript="Greeting">
       <param name="class" value="jp.enpit.cloud.dwrsample.Greeting"/>
     </create>
+    <convert converter="bean" match="jp.enpit.cloud.dwrsample.*" />
   </allow>
 </dwr>
