@@ -18,8 +18,8 @@ public class Test {
 			DBCursor cursor = table.find( query);
 			if ( cursor.hasNext()) System.out.println( cursor.next().toString()); // only first result
 		} 
-		catch ( MongoException e) { System.out.println( "{ \"error\": \"bad code\"}")};
-		catch ( UnknownHostException e) { System.out.println( "{ \"error\": \"bad code\"}")};
+		catch ( MongoException e) { System.out.println( "{ \"error\": \"bad code\"}"); }
+		catch ( UnknownHostException e) { System.out.println( "{ \"error\": \"bad code\"}"); }
 	}
 		
 }
