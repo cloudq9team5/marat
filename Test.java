@@ -1,6 +1,7 @@
 package test;
 import java.io.*;
 import java.util.Date;
+import java.net.UnknownHostException;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
