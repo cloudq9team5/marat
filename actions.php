@@ -1,5 +1,5 @@
 <?php
 $m = new MongoClient( 'mongodb://localhost:12345');
-$db = $m->selectDB( 'tem');
-echo '{ "msg": "OK so far"}';
+$info = $m->tem->users->find( array( 'name' => 'marat'));
+echo json_encode( $info); 
 ?>
