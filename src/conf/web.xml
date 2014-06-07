@@ -1,18 +1,10 @@
-<web-app>
+<web-app version="2.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xsi:schemalocation="http:/java.sun.com/dtd/web-app_2_3.dtd">
   <servlet>
-    <servlet-name>dwr-invoker</servlet-name>
-    <servlet-class>
-      org.directwebremoting.servlet.DwrServlet
-    </servlet-class>
-    <init-param>
-      <param-name>debug</param-name>
-      <param-value>true</param-value>
-    </init-param>
+    <servlet-name>main</servlet-name>
+    <servlet-class>test.Test</servlet-class>
   </servlet>
-
   <servlet-mapping>
-    <servlet-name>dwr-invoker</servlet-name>
-    <url-pattern>/dwr/*</url-pattern>
+    <servlet-name>main</servlet-name>
+    <url-pattern>/marat5</url-pattern>
   </servlet-mapping>
 </web-app>
-
