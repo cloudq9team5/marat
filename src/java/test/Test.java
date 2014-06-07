@@ -14,7 +14,7 @@ public class Test extends HttpServlet {
 	public void doPost( HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException { try { 
 		PrintWriter out = res.getWriter(); // HTML output
 		MongoClient mongo = new MongoClient("localhost", 12345);
-		DB db = mongo.getDB( 'tem'); // mongo > db
+		DB db = mongo.getDB( "tem"); // mongo > db
 		DBCollection table = db.getCollection( "user"); // db > table
 		BasicDBObject query = new BasicDBObject() // query
 		.append( "name", "marat");	// search for key=value
