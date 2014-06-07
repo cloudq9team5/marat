@@ -6,12 +6,12 @@
 	<property name="src.web"  value="${src.dir}/web" />
 	<property name="src.conf" value="${src.dir}/conf" />
 	<property name="lib.dir" value="lib" />
-	<property name="dest.dir"  value="/usr/share/tomcat6/webapps" />
-  	<property name="dest.java" value="./classes" />
+	<property name="dest.dir"  value="./temp" />
+  	<property name="dest.java" value="${dest.dir}/classes" />
   	<property name="dest.web"  value="${dest.dir}/web" />
   	<property name="dest.conf" value="${dest.dir}/conf" />
   	<property name="dest.webinf" value="${dest.conf}/WEB-INF" />
-  	<property name="war.file"  value="${dest.dir}/${ant.project.name}.war" />
+  	<property name="war.file"  value="/usr/share/tomcat6/webapps/${ant.project.name}.war" />
   	<path id="base.classpath">
   		<fileset dir="${lib.dir}" includes="*.jar" />
   		<fileset dir="${tomcat.dir}/lib" includes="*.jar" />
@@ -44,9 +44,9 @@
 			<fileset dir="${dest.web}" />
 			<fileset dir="${dest.conf}" />
 		</war>
-		<delete dir="${dest.java}" />
 	</target>
 	<target name="deploy" depends="build">
+		<delete dir="${dest.dir}" />
 		<copy file="${war.file}" todir="${tomcat.dir}/webapps" />
 	</target>
 	<target name="clean">
