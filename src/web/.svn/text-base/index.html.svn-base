@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script type='text/javascript' src='dwr/engine.js'></script>
+    <script type='text/javascript' src='dwr/util.js'></script>
+    <script type='text/javascript' src='dwr/interface/Greeting.js'></script>    
+    <script type="text/javascript">
+function update() {
+  var name = dwr.util.getValue("demoName");
+  var age = dwr.util.getValue("demoAge");
+  Greeting.sayHello(name, age, function(data) {
+    dwr.util.setValue("demoReply", data);
+  });
+}
+    </script>
+  </head>
+  <body>
+    <p>
+      Name: <input type="text" id="demoName"/><br />
+      Age: <input type="text" id="demoAge"/><br />
+      <input value="Send" type="button" onclick="update()"/>
+    </p><p>
+    Reply: <span id="demoReply"></span>
+    </p>
+  </body>
+</html>
