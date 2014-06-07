@@ -20,6 +20,6 @@ public class Test extends HttpServlet {
 		.append( "name", "marat");	// search for key=value
 		DBCursor cursor = table.find( query);
 		if ( cursor.hasNext()) out.println( cursor.next()); // only first result
-	} catch ( MongoException e) { out.println( "{ \"error\": \"bad code\"}");}}
+	} catch ( MongoException e) { res.getWriter().println( "{ \"error\": \"bad code\"}");}}
 	
 }
