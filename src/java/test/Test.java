@@ -12,8 +12,8 @@ import javax.servlet.http.*;
 import javax.servlet.*;
 public class Test extends HttpServlet {
 	public void doPost( HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException { 
+		PrintWriter out = res.getWriter(); // HTML output
 		try { 
-			PrintWriter out = res.getWriter(); // HTML output
 			MongoClient mongo = new MongoClient("localhost", 12345);
 			DB db = mongo.getDB( "tem"); // mongo > db
 			DBCollection table = db.getCollection( "user"); // db > table
@@ -22,8 +22,8 @@ public class Test extends HttpServlet {
 			DBCursor cursor = table.find( query);
 			if ( cursor.hasNext()) out.println( cursor.next()); // only first result
 		} 
-		catch ( MongoException e) { res.getWriter().println( "{ \"error\": \"bad code\"}"); }
-		catch ( UnknownHostException e) { System.out.println( "{ \"error\": \"bad code\"}");}
+		catch ( MongoException e) { out.println( "{ \"error\": \"bad code\"}"); }
+		catch ( UnknownHostException e) { out.println( "{ \"error\": \"bad code\"}");}
 	}
 	
 }
