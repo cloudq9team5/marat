@@ -15,7 +15,7 @@ public class Test {
 		BasicDBObject query = new BasicDBObject() // query
 		.append( "name", "marat");	// search for key=value
 		DBCursor cursor = table.find( query);
-		if ( cursor.hasNext()) System.out.println( ( String)cursor.next()); // only first result
+		if ( cursor.hasNext()) System.out.println( cursor.next().toString()); // only first result
 	} catch ( MongoException e) { System.out.println( "{ \"error\": \"bad code\"}");}}
 	
 }
