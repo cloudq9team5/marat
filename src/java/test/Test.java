@@ -5,7 +5,7 @@ import javax.servlet.*;
 public class Test extends HttpServlet {
 	public void doPost (HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		PrintWriter out = res.getWriter();
-		out.println("Hello, world!");
+		out.println( '{ "name": "marat", "age": 37}');
 		out.close();
 	}
 	
